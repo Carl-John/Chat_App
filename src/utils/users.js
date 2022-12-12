@@ -15,8 +15,8 @@ const addUser = ({ id, username, room }) => {
     }
 
     // Check for existing user
-    const existingUser = users.find(() => {
-        return username.room === room && username.username === username
+    const existingUser = users.find((user) => {
+        return user.room === room && user.username === username
     }) 
 
     // Validate username
@@ -33,7 +33,7 @@ const addUser = ({ id, username, room }) => {
 }
 
 const removeUser = (id) => {
-    const index = users.findIndex(() => user.id === id)
+    const index = users.findIndex((user) => user.id === id)
 
     if (index !== -1) {
         return users.splice(index, 1)[0]
